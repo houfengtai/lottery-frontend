@@ -1,0 +1,95 @@
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;}
+/*body{color:#333; font-size:12px;font-family:"Microsoft YaHei"}*/
+ul,ol{list-style-type:none;}
+.main{background: #379DE8;}
+select,input,img,select{vertical-align:middle;}
+input{ font-size:12px;}
+.clear{clear:both;}
+
+.turnplate {
+  background-image:url('../images/turnplate-bg.png');
+  background-size:100% 100%;
+}
+
+/* 大转盘样式 */
+.banner{display:block;width:79%;margin-left:auto;margin-right:auto;margin-bottom: 20px;}
+.banner .turnplate{display:block;width:100%;position:relative;}
+.banner .turnplate canvas.item{width:100%;}
+.banner .turnplate img.pointer{position:absolute;width:31.5%;height:42.5%;left:34.43%;top:22.7%;}
+#sbtn{text-align: center;width: 100%; }
+#sbtn img{ width: 24%;margin: 0 20px; }
+.bg-dialog{
+  position: fixed;
+  top:0;
+  left:0;
+  background: #000;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.login-box{
+  width: 90%;
+  height: 200px;
+  position: fixed;
+  left: calc( 5%);
+  top: calc( 50% - 100px);
+  background: #fff;
+  border-radius: 5px;
+  z-index: 2;
+  text-align: center;
+  font-size: 18px;
+}
+.login-box div{margin: 15px 0px}
+.login-box div input {
+  height: 35px;
+  line-height:35px;
+  width: 230px;
+  font-size: 18px;
+  color:#2c3e50;
+  text-indent: 1em;
+  border-radius: 5px;
+  border:1px solid #e5e5e5;
+}
+.login-box div button {
+  height: 37px;
+  line-height:37px;
+  width: 230px;
+  font-size: 18px;
+  border-radius: 5px;
+  border:1px solid #23b7cb;
+  background: #23b7cb;
+  color:#fff;
+  cursor:pointer;
+}
+.container{
+  margin: 0 auto;
+}
+.content{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+  margin-top: 58%;
+  background: #379DE8;
+}
+.info-tips{
+  width: 90%;
+  margin: 10px auto;
+  line-height: 22px;
+  font-size:16px;
+}
+.rule{
+  width: 90%;
+  margin: 10px auto 30px auto;
+  line-height: 22px;
+  font-size:16px;
+  border-radius: 10px;
+  border:1px solid #fff490;
+  background: #fff490;
+  min-height:100px;
+  padding: 5px 10px;
+}
+.show-time{
+  float: right;
+}

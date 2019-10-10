@@ -1,0 +1,11 @@
+/build/
+/config/
+/dist/
+/test/unit/coverage/
+/node_modules/
+**/config
+**/test
+*.min.js
+.babelrc
+/docker/*
+/src/components/lottery/assets/js/awardRotate.js
