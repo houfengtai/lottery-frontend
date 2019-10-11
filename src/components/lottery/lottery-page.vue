@@ -114,7 +114,6 @@ export default {
        **/
     _settingPhone () {
       axios.post('/api/verify', { phone: this.telPhone, randomId: new Date().getTime() }).then(res => {
-        console.log(res.data.code)
         if (res.data.code === 200) {
           const { tokenId, time } = res.data.data
           this.tokenId = tokenId
