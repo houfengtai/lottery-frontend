@@ -332,15 +332,15 @@ export default {
     this._getInitData()
     // 判断是否已绑定手机
     const tokenId = window.localStorage.getItem('randomId')
-    if (tokenId == null || tokenId === '') {
+    if (tokenId == null || tokenId === '' || tokenId === 'null' || tokenId === 'NULL' || tokenId === undefined || tokenId === 'undefined') {
       this.isLogin = false
       this.isShowBgDialog = true
     } else {
       this.isLogin = true
       this.isShowBgDialog = false
+      this.tokenId = tokenId
+      this._getLotteryTime(this.tokenId)
     }
-    this.tokenId = tokenId
-    this._getLotteryTime(tokenId)
   }
 }
 </script>
