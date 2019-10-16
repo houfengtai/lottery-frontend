@@ -35,6 +35,14 @@ const routes = [
     component: resolve => require(['@/components/admin/login/login-page'], resolve)
   },
   {
+    path: '/admin/activity',
+    name: 'activity',
+    component: resolve => require(['@/components/admin/activity/activity-page'], resolve),
+    mata: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '*',
     component: resolve => require(['@/components/public/not-found'], resolve)
   }
