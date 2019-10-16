@@ -40,11 +40,19 @@ export default {
          */
       axios.interceptors.response.use(
         response => {
-          let code = response.data.code
+          const { code, message } = response.data
           if (code === 401 && this.$route.name !== 'lottery') {
             window.localStorage.removeItem('authToken')
             window.localStorage.removeItem('userInfo')
             this.$router.push({ name: 'login', params: { redirectPath: this.$route.fullPath } })
+            return
+          }
+          if (code === 400) {
+            alert(message)
+            return
+          }
+          if (code === 500) {
+            alert('服务器异常')
             return
           }
           return response
@@ -55,7 +63,7 @@ export default {
                    * 状态码500代表REST服务器异常
                    */
           const status = error.response.status
-          // const message = error.response.data.message
+          const message = error.response.data.message
           if (status === 401 && this.$route.name !== 'lottery') {
             /**
              * 登录授权token超时，提示
@@ -65,8 +73,13 @@ export default {
             this.$router.push({ name: 'login', params: { redirectPath: this.$route.fullPath } })
             return Promise.reject(error)
           }
+          if (status === 400) {
+            alert(message)
+            return
+          }
           if (status === 500) {
-            //
+            alert('服务器异常')
+            return
           }
           return Promise.reject(error)
         }
@@ -84,7 +97,6 @@ export default {
     color: #2c3e50;
     margin: 0px;
     padding:0px;
-    background: #f5f5f5;
     font-size:14px;
   }
   body{

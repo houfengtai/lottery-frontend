@@ -30,6 +30,11 @@ const routes = [
     component: resolve => require(['@/components/lottery/lottery-page'], resolve)
   },
   {
+    path: '/admin/login',
+    name: 'login',
+    component: resolve => require(['@/components/admin/login/login-page'], resolve)
+  },
+  {
     path: '*',
     component: resolve => require(['@/components/public/not-found'], resolve)
   }
