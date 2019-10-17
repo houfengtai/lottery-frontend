@@ -13,7 +13,52 @@ export default {
   created () {
     this._addInterceptors()
   },
+  watch: {
+    '$route' (to, from) { // 如果路由有变化，会重新执行该方法
+      this._routeChanged(to, from)
+    }
+  },
   methods: {
+    _routeChanged (to, from) {
+      this._dealAndroidInputMethodProblem()
+    },
+    /**
+     * 处理安卓手机点击输入框的时候，底部导航被输入法顶上来的问题
+     */
+    _dealAndroidInputMethodProblem () {
+      const userAgent = navigator.userAgent
+      if (userAgent.indexOf('Android') > -1 || userAgent.indexOf('Linux') > -1) {
+        /**
+         * 给所有非只读的输入框通过绑定获取焦点事件，用来把选中的输入框展示在屏幕中间位置
+         */
+        this.$el.querySelectorAll('input:not([readonly])').forEach(
+          e => e.addEventListener('focus', () => {
+            this.scrollIntoView(true)
+          })
+        )
+      }
+    },
+    /**
+     * 通过onresize事件，安卓系统弹出输入法的时候隐藏下边导航栏，收起时展示
+     */
+    _onresizeAndroidScreen () {
+      const userAgent = navigator.userAgent
+      if (userAgent.indexOf('Android') > -1 || userAgent.indexOf('Linux') > -1) {
+        const winowHeight = window.innerHeight
+        window.onresize = () => {
+          const tabbar = document.querySelector('.tab-main')
+          const service = document.querySelector('.service')
+          const docHeight = window.innerHeight
+          if (docHeight < winowHeight) {
+            tabbar.style.display = 'none'
+            service !== null && (service.style.display = 'none')
+            return
+          }
+          tabbar.style.display = ''
+          service !== null && (service.style.display = '')
+        }
+      }
+    },
     /**
        * 给所有axios请求增加
        * request拦截器：为了给请求header里添加token信息
@@ -85,6 +130,13 @@ export default {
         }
       )
     }
+  },
+  mounted () {
+  /**
+   * 处理安卓手机点击输入框的时候，底部导航被输入法顶上来的问题
+   */
+    this._dealAndroidInputMethodProblem()
+    this._onresizeAndroidScreen()
   }
 }
 </script>
@@ -111,4 +163,6 @@ export default {
     text-decoration: none;
     color: #00c1dc;
   }
+  .add-box{position: fixed;right:10px;bottom:80px;border-radius: 50%;width:40px;height:40px;}
+  .add-box img{width:40px;height:40px;}
 </style>

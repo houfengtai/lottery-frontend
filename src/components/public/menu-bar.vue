@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div class="tab-main">
         <div class="padding-div"></div>
         <div class="nav-box">
             <div v-for="nav in navs" :key="nav.id" class="nav-item" :class="{select:index==nav.id}">
@@ -35,12 +35,11 @@ export default {
 </script>
 
 <style scoped>
-.main{
+.tab-main{
     width: 100%;
 }
 .padding-div{
     height: 50px;
-    background: none;
     width:100%;
 }
 .nav-box{
@@ -60,5 +59,5 @@ export default {
         color:#cdcdcd;
     }
 .nav-item img{width:30px;height:30px;}
-    .select{color:#ffbf02}
+.select{color:#ffbf02}
 </style>
