@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="foot-box">qwewgtrwghrefewerwrwerewrwqe</div>
-        <menu-bar></menu-bar>
+        <div class="foot-box">这是活动设置页面</div>
+        <menu-bar :index="1"></menu-bar>
     </div>
 </template>
 
