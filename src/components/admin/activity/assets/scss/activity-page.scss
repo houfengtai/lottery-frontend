@@ -1,6 +1,5 @@
 .activity-box{
-  width:calc(100% - 20px);
-  padding: 10px 10px 0px 10px;
+  width:100%;
 }
 .but-box img{
   height:20px;
@@ -10,8 +9,9 @@
 }
 .item-content{
   min-height: 50px;
-  border-bottom: 1px dashed #e5e5e5;
-  clear: both;
+  border-bottom: 1px solid #e5e5e5;
+  background: #fff;
+  margin:5px 0px;
 }
 .time-box{
   font-size:12px;
@@ -24,14 +24,16 @@
   overflow: hidden;
 }
 .left-box{
-  width: 230px;
+  width: 220px;
   float: left;
+  padding-left:10px;
 }
 .right-box{
-  width: calc(100% - 230px);
+  width: calc(100% - 240px);
   float: right;
   height:20px;
   margin: 15px 0px;
+  padding-right:10px;
 }
 .right-box img{
   float: right;

@@ -154,6 +154,7 @@ export default {
   body{
     margin: 0px;
     padding:0px;
+    background: #f5f5f5;
   }
   a{
     text-decoration: none;
@@ -165,4 +166,5 @@ export default {
   }
   .add-box{position: fixed;right:10px;bottom:80px;border-radius: 50%;width:40px;height:40px;}
   .add-box img{width:40px;height:40px;}
+  .clear{clear: both;}
 </style>

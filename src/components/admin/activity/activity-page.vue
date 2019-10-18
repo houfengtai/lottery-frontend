@@ -14,9 +14,9 @@
                         </div>
                     </div>
                     <div class="right-box">
-                        <img v-if="item.status==1" src="./assets/images/stop.svg">
-                        <img v-if="item.status==0" src="./assets/images/start.svg">
-                        <img src="./assets/images/update.svg">
+                        <img v-if="item.status==1" src="./assets/images/stop.svg" @click="_stopActivity(item.id,index)">
+                        <img v-if="item.status==0" src="./assets/images/start.svg" @click="_startActivity(item.id)">
+                        <img src="./assets/images/update.svg" @click="_updateActivity(item)">
                     </div>
                 </div>
                 <div v-show="item.isSelected" class="pointer-img"><img src="./assets/images/triangle.svg"></div>
@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="add-box">
-                <img src="./assets/images/add.svg">
+                <img src="./assets/images/add.svg" @click="_addActivity()">
             </div>
         </div>
         <menu-bar :index="1"></menu-bar>

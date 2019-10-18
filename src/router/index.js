@@ -43,6 +43,22 @@ const routes = [
     }
   },
   {
+    path: '/admin/activity/add',
+    name: 'addActivity',
+    component: resolve => require(['@/components/admin/activity/add-activity'], resolve),
+    mata: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/admin/activity/update',
+    name: 'updateActivity',
+    component: resolve => require(['@/components/admin/activity/update-activity'], resolve),
+    mata: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '*',
     component: resolve => require(['@/components/public/not-found'], resolve)
   }

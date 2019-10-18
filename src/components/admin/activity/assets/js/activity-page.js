@@ -32,6 +32,32 @@ export default {
       let obj = this.activites[index]
       obj.isSelected = !this.activites[index].isSelected
       this.$set(this.activites, index, obj)
+    },
+    _addActivity () {
+      this.$router.push({ name: 'addActivity' })
+    },
+    _stopActivity (id, index) {
+      axios.put(`/api/admin/activity/stop/${id}`).then(res => {
+        const code = res.data.code
+        if (code === 200) {
+          let obj = this.activites[index]
+          obj.status = 0
+          this.$set(this.activites, index, obj)
+        }
+      })
+    },
+    _startActivity (id) {
+      axios.put(`/api/admin/activity/start/${id}`).then(res => {
+        const code = res.data.code
+        if (code === 200) {
+          this.$router.history.go(0)
+        }
+      })
+    },
+    _updateActivity (item) {
+      // 先存到缓存中,等到对应的页面需要用到时再获取
+      window.localStorage.setItem('activityItem', JSON.stringify(item))
+      this.$router.push({ name: 'updateActivity' })
     }
   },
   mounted () {
