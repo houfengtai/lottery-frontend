@@ -10,6 +10,7 @@ module.exports = {
   publicPath: '/',
   // webpack-dev-server 相关配置
   devServer: {
+    port: 8080,
     proxy: {
       '/api': {
         // 目标 API 地址
