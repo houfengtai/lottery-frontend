@@ -164,7 +164,11 @@ export default {
     text-decoration: none;
     color: #00c1dc;
   }
-  .add-box{position: fixed;right:10px;bottom:80px;border-radius: 50%;width:40px;height:40px;}
+  .add-box{position: fixed;right:10px;bottom:85px;border-radius: 50%;width:40px;height:40px;}
   .add-box img{width:40px;height:40px;}
   .clear{clear: both;}
+  .border-top{border-top:1px solid #e5e5e5;}
+  .border-bottom{border-bottom:1px solid #e5e5e5;}
+  .border-left{border-left:1px solid #e5e5e5;}
+  .border-right{border-right:1px solid #e5e5e5;}
 </style>

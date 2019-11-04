@@ -2,7 +2,7 @@
     <div class="tab-main">
         <div class="padding-div"></div>
         <div class="nav-box">
-            <div v-for="nav in navs" :key="nav.id" class="nav-item" :class="{select:index==nav.id}">
+            <div v-for="nav in navs" :key="nav.id" class="nav-item" :class="{select:index==nav.id}" @click="_redirect(nav.url)">
                 <div><img :src="_getImgUrl(index==nav.id,nav.name)"></div>
                 <div>{{nav.label}}</div>
             </div>
@@ -16,8 +16,8 @@ export default {
   data () {
     return {
       navs: [
-        { id: 1, label: '活动', url: '', name: 'activity' },
-        { id: 2, label: '奖品', url: '', name: 'trophy' },
+        { id: 1, label: '活动', url: '/admin/activity', name: 'activity' },
+        { id: 2, label: '奖品', url: '/admin/trophy', name: 'trophy' },
         { id: 3, label: '设置', url: '', name: 'setting' },
         { id: 4, label: '记录', url: '', name: 'log' }
       ]
@@ -28,6 +28,9 @@ export default {
     _getImgUrl (bool, name) {
       if (bool) return `/${name}-h.svg`
       return `/${name}.svg`
+    },
+    _redirect (url) {
+      this.$router.push({ path: url })
     }
   }
 
@@ -44,7 +47,7 @@ export default {
 }
 .nav-box{
     height: 50px;
-    background: none;
+    background: #fff;
     position: fixed;
     left: 0;
     bottom: 0;

@@ -59,6 +59,30 @@ const routes = [
     }
   },
   {
+    path: '/admin/trophy',
+    name: 'trophy',
+    component: resolve => require(['@/components/admin/trophy/trophy-page'], resolve),
+    mata: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/admin/trophy/add',
+    name: 'addTrophy',
+    component: resolve => require(['@/components/admin/trophy/add-trophy'], resolve),
+    mata: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/admin/trophy/update',
+    name: 'updateTrophy',
+    component: resolve => require(['@/components/admin/trophy/update-trophy'], resolve),
+    mata: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '*',
     component: resolve => require(['@/components/public/not-found'], resolve)
   }

@@ -18,7 +18,7 @@
             <span class="font-title float-left">活动说明</span>
             <span><textarea v-model="item.remark" ></textarea></span>
         </div>
-        <div class="tips">温馨提示：换行请在后面加上&lt;br&gt;</div>
+        <div class="tips">温馨提示：换行请在结束后面加上&lt;br&gt;</div>
         <div><button @click="_save()">保 存</button></div>
     </div>
 </div>
@@ -27,6 +27,8 @@
 <script>
 import dateUtil from '@/components/public/dateUtil.js'
 import BackPage from '@/components/public/back-page'
+import axios from 'axios'
+
 export default {
   name: 'update-activity',
   components: { BackPage },
@@ -45,8 +47,17 @@ export default {
       this.item = JSON.parse(item)
       this.item.startTime = dateUtil.dateFormat('yyyy-MM-dd', new Date(this.item.startTime))
       this.item.endTime = dateUtil.dateFormat('yyyy-MM-dd', new Date(this.item.endTime))
+    },
+    _save () {
+      axios.put('/api/admin/activity', this.item).then(res => {
+        if (res.data.code === 200) {
+          window.localStorage.removeItem('activityItem')
+          this.$router.push({ name: 'activity' })
+        } else {
+          alert(res.data.message)
+        }
+      })
     }
-
   },
   mounted () {
 
@@ -89,7 +100,6 @@ export default {
     display: inline-block;
     min-height:120px;
     padding: 5px 10px;
-    text-indent: 1em;
     width: calc(100% - 95px);
     resize: none;
     border:0;
@@ -98,7 +108,6 @@ export default {
     float: left;
 }
 .margin-bottom-10{margin-bottom: 10px}
-.border-top{border-top:1px solid #e5e5e5;}
  button{
     display: block;
     width: calc(100% - 20px);
@@ -111,5 +120,5 @@ export default {
     background: #ffbf02;
     color:#fff;
 }
-    .tips{color:red;font-size:12px;margin-top:5px;text-indent: 1em;}
+.tips{color:red;font-size:12px;margin-top:5px;text-indent: 1em;}
 </style>
