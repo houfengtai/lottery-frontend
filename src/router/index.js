@@ -83,6 +83,14 @@ const routes = [
     }
   },
   {
+    path: '/admin/user/logs',
+    name: 'logs',
+    component: resolve => require(['@/components/admin/log/log-page'], resolve),
+    mata: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '*',
     component: resolve => require(['@/components/public/not-found'], resolve)
   }

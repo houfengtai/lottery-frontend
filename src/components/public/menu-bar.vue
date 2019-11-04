@@ -19,7 +19,7 @@ export default {
         { id: 1, label: '活动', url: '/admin/activity', name: 'activity' },
         { id: 2, label: '奖品', url: '/admin/trophy', name: 'trophy' },
         { id: 3, label: '设置', url: '', name: 'setting' },
-        { id: 4, label: '记录', url: '', name: 'log' }
+        { id: 4, label: '记录', url: '/admin/user/logs', name: 'log' }
       ]
     }
   },
