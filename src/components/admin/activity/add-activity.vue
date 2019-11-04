@@ -38,6 +38,10 @@ export default {
   },
   methods: {
     _save () {
+      if (!this.item.activityName) {
+        alert('活动名称不能为空!')
+        return
+      }
       axios.post('/api/admin/activity', this.item).then(res => {
         if (res.data.code === 200) {
           this.$router.push({ name: 'activity' })

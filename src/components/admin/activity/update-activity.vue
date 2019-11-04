@@ -49,6 +49,10 @@ export default {
       this.item.endTime = dateUtil.dateFormat('yyyy-MM-dd', new Date(this.item.endTime))
     },
     _save () {
+      if (!this.item.activityName) {
+        alert('活动名称不能为空!')
+        return
+      }
       axios.put('/api/admin/activity', this.item).then(res => {
         if (res.data.code === 200) {
           window.localStorage.removeItem('activityItem')

@@ -171,4 +171,14 @@ export default {
   .border-bottom{border-bottom:1px solid #e5e5e5;}
   .border-left{border-left:1px solid #e5e5e5;}
   .border-right{border-right:1px solid #e5e5e5;}
+  .bg-dialog{
+    position: fixed;
+    top:0;
+    left:0;
+    background: #000;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
 </style>
