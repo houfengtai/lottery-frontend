@@ -1,10 +1,11 @@
 import menuBar from '@/components/public/menu-bar'
+import addImg from '@/components/public/add-img'
 import axios from 'axios'
 import dateUtil from '@/components/public/dateUtil.js'
 
 export default {
   name: 'activity-page',
-  components: { menuBar },
+  components: { menuBar, addImg },
   data () {
     return {
       activites: []
@@ -32,9 +33,6 @@ export default {
       let obj = this.activites[index]
       obj.isSelected = !this.activites[index].isSelected
       this.$set(this.activites, index, obj)
-    },
-    _addActivity () {
-      this.$router.push({ name: 'addActivity' })
     },
     _stopActivity (id, index) {
       axios.put(`/api/admin/activity/stop/${id}`).then(res => {

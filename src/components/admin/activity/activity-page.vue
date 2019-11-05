@@ -24,10 +24,8 @@
                     {{item.remark}}
                 </div>
             </div>
-            <div class="add-box">
-                <img src="./assets/images/add.svg" @click="_addActivity()">
-            </div>
         </div>
+        <add-img url="/admin/activity/add"></add-img>
         <menu-bar :index="1"></menu-bar>
     </div>
 </template>

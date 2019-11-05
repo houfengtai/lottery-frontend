@@ -1,9 +1,10 @@
 import menuBar from '@/components/public/menu-bar'
+import addImg from '@/components/public/add-img'
 import axios from 'axios'
 
 export default {
   name: 'trophy-page',
-  components: { menuBar },
+  components: { menuBar, addImg },
   data () {
     return {
       trophes: [],
@@ -20,9 +21,6 @@ export default {
     _updateTrophy (item) {
       window.localStorage.setItem('trophyItem', JSON.stringify(item))
       this.$router.push({ name: 'updateTrophy' })
-    },
-    _addTrophy () {
-      this.$router.push({ name: 'addTrophy' })
     },
     _showDialog (id) {
       this.isShowBgDialog = true

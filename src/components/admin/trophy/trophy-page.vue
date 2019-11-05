@@ -21,9 +21,6 @@
                 </div>
             </div>
         </div>
-        <div class="add-box">
-            <img src="/add.svg" @click="_addTrophy()">
-        </div>
         <div v-if="isShowBgDialog" class="bg-dialog"></div>
         <div v-if="isShowBgDialog" class="dialog-box">
             <div class="">确定要删除该奖项吗?</div>
@@ -33,6 +30,7 @@
                 <button @click="_deleteTrophy()">确 定</button>
             </div>
         </div>
+        <add-img url="/admin/trophy/add"></add-img>
         <menu-bar :index="2"></menu-bar>
     </div>
 </template>
