@@ -83,6 +83,30 @@ const routes = [
     }
   },
   {
+    path: '/admin/prizes',
+    name: 'prize',
+    component: resolve => require(['@/components/admin/prize/prize-page'], resolve),
+    mata: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/admin/prize/add',
+    name: 'addPrize',
+    component: resolve => require(['@/components/admin/prize/add-user'], resolve),
+    mata: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/admin/prize/update',
+    name: 'updatePrize',
+    component: resolve => require(['@/components/admin/prize/update-user'], resolve),
+    mata: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '/admin/user/logs',
     name: 'logs',
     component: resolve => require(['@/components/admin/log/log-page'], resolve),
