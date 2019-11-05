@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="search-box">
-            <div class="search-other"><img src="/user.svg"></div>
+            <div class="search-other"><img src="/user.svg" @click="_go()"></div>
             <div class="search">
                 <input v-model="phone" placeholder="请输入要查询的号码">
                 <img src="/search.svg" @click="_queryData()">

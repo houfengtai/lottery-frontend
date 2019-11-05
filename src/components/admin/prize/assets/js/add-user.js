@@ -10,6 +10,14 @@ export default {
   },
   methods: {
     _save () {
+      if (!this.item.phone) {
+        alert('请输入手机号码')
+        return
+      }
+      if (!this.item.num) {
+        alert('请输入可抽奖次数')
+        return
+      }
       axios.post('/api/admin/setting/phone', this.item).then(res => {
         const { code, message } = res.data
         if (code === 200) {

@@ -39,6 +39,9 @@ export default {
     _showDialog (id) {
       this.isShowBgDialog = true
       this.id = id
+    },
+    _go () {
+      this.$router.push({ name: 'userPrize' })
     }
   },
   mounted () {

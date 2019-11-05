@@ -107,6 +107,30 @@ const routes = [
     }
   },
   {
+    path: '/admin/setting/prize',
+    name: 'userPrize',
+    component: resolve => require(['@/components/admin/prize/user-prize'], resolve),
+    mata: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/admin/setting/prize/add',
+    name: 'addUserPrize',
+    component: resolve => require(['@/components/admin/prize/add-user-prize'], resolve),
+    mata: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/admin/setting/prize/update',
+    name: 'updateUserPrize',
+    component: resolve => require(['@/components/admin/prize/update-user-prize'], resolve),
+    mata: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '/admin/user/logs',
     name: 'logs',
     component: resolve => require(['@/components/admin/log/log-page'], resolve),
