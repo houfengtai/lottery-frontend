@@ -1,0 +1,107 @@
+.trophy-row{
+  min-height:50px;
+  background: #fff;
+  padding: 0px 10px;
+  width: calc(100% - 20px);
+}
+.ac-content{
+  display: block;
+  width:calc(100% - 80px);
+  height:50px;
+  line-height:50px;
+  float:left;
+}
+.ac-title{
+  width:calc(100% - 20px);
+  boarder:1px solid red;
+  display: inline-block;
+  height: 50px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ac-content img{
+  float: right;
+  margin-top: 10px;
+  margin-right: -10px;
+}
+.trophy-row span input{
+  width:calc(100% - 140px);
+  height:35px;
+  line-height:35px;
+  font-size:14px;
+  margin-top: 6px;
+  border:0;
+}
+.margin-bottom-10{
+  margin-bottom:10px;
+}
+button{
+  display: block;
+  width: calc(100% - 20px);
+  border: 0px;
+  border-radius: 20px;
+  height:40px;
+  line-height: 40px;
+  font-size: 16px;
+  margin: 10px auto;
+  background: #ffbf02;
+  color:#fff;
+}
+.row-label{
+  line-height:50px;
+  display: block;
+  height:50px;
+  width:70px;
+  float:left;
+}
+.tips{color:red;
+  font-size:12px;
+  margin-top:5px;
+  padding: 0px 10px;
+  width: calc(100% - 20px);}
+.color-yl{
+  width:40px;
+  height:20px;
+  display: block;
+  float: right;
+  margin-top:15px;
+}
+
+.activity-box{
+  position: fixed;
+  left:0;
+  top:40px;
+  width: 100%;
+  min-height: 50px;
+  background: #fff;
+  z-index: 2;
+}
+.activity-box img.jt{
+  top: -12px;
+  left: 18px;
+  position: absolute;
+}
+.activity-row{
+  height:50px;
+  line-height: 50px;
+  border-bottom:1px solid #e5e5e5;
+}
+.activity-row span{
+  display: inline-block;
+}
+.seq-no{
+  width:30px;
+  text-indent: 1em;
+  float: left;
+}
+.activity-title{
+  width: calc(100% - 80px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.activity-row img{
+  float: right;
+  margin: 15px 15px 0px 0px;
+}

@@ -3,7 +3,7 @@
         <back-page></back-page>
         <div class="trophy-row margin-bottom-10 border-bottom">
             <div class="row-label">所属活动</div>
-            <span class="ac-content">
+            <span class="ac-content" @click="isShowActivites=!isShowActivites">
                 <span class="ac-title">{{activityName}}</span>
                 <span><img src="/next.svg"></span>
             </span>
@@ -31,104 +31,24 @@
         <div class="tips">
             <div>温馨提示：</div>
             <div>1.中奖概率为正整数,数值越大中奖概率越高,0为不中奖</div>
-            <div>2.背景颜色为轮盘奖项背景颜色</div>
+            <div>2.背景颜色为轮盘奖项背景颜色[1~9a~z]6位数</div>
             <div>3.奖品序号为该奖项所在的顺序</div>
         </div>
         <div><button @click="_save()">保 存</button></div>
+
+        <div v-if="isShowActivites" class="bg-dialog"></div>
+        <div class="activity-box" v-show="isShowActivites">
+            <div class="activity-row" v-for="(entity, index) in activites" :key="entity.id" @click="_checkedActivity(entity.id,entity.activityName)">
+                <span class="seq-no">{{index + 1}}</span>
+                <span class="activity-title">{{entity.activityName}}</span>
+                <img v-if="entity.id===item.activityId" src="/selected.svg">
+            </div>
+        </div>
     </div>
 </template>
 
-<script>
-import BackPage from '@/components/public/back-page'
-export default {
-  name: 'add-trophy',
-  components: { BackPage },
-  data () {
-    return {
-      selectedColor: '',
-      activityName: '',
-      item: {}
-    }
-  },
-  methods: {
-    _save () {
-
-    }
-  },
-  created () {
-    document.title = '新增奖品'
-  }
-}
-</script>
+<script src="./assets/js/add-trophy.js"></script>
 
 <style scoped>
-.trophy-row{
-    min-height:50px;
-    background: #fff;
-    padding: 0px 10px;
-    width: calc(100% - 20px);
-}
-.ac-content{
-    display: block;
-    width:calc(100% - 80px);
-    height:50px;
-    line-height:50px;
-    float:left;
-}
-.ac-title{
-    width:calc(100% - 20px);
-    boarder:1px solid red;
-    display: inline-block;
-    height: 50px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-.ac-content img{
-    float: right;
-    margin-top: 10px;
-    margin-right: -10px;
-}
-.trophy-row span input{
-    width:calc(100% - 140px);
-    height:35px;
-    line-height:35px;
-    font-size:14px;
-    margin-top: 6px;
-    border:0;
-}
-.margin-bottom-10{
-    margin-bottom:10px;
-}
-button{
-    display: block;
-    width: calc(100% - 20px);
-    border: 0px;
-    border-radius: 20px;
-    height:40px;
-    line-height: 40px;
-    font-size: 16px;
-    margin: 10px auto;
-    background: #ffbf02;
-    color:#fff;
-}
-.row-label{
-    line-height:50px;
-    display: block;
-    height:50px;
-    width:70px;
-    float:left;
-}
-.tips{color:red;
-    font-size:12px;
-    margin-top:5px;
-    padding: 0px 10px;
-    width: calc(100% - 20px);}
-.color-yl{
-    width:40px;
-    height:20px;
-    display: block;
-    float: right;
-    margin-top:15px;
-}
+@import "./assets/scss/trophy.scss";
 </style>
