@@ -35,6 +35,9 @@
 }
 .list-box .row div:nth-child(1),.row-head div:nth-child(1){
   width: 80px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .list-box .row div:nth-child(2),.row-head div:nth-child(2){
   width: 80px;
@@ -53,6 +56,9 @@
 .list-box .row div:nth-child(4),.row-head div:nth-child(4){
   width: 60px;
   text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .list-box .row div:nth-child(5),.row-head div:nth-child(5){
   width: calc(100% - 300px);
