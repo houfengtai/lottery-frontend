@@ -45,8 +45,15 @@ export default {
         return
       }
       this.item = JSON.parse(item)
-      this.item.startTime = dateUtil.dateFormat('yyyy-MM-dd', new Date(this.item.startTime))
-      this.item.endTime = dateUtil.dateFormat('yyyy-MM-dd', new Date(this.item.endTime))
+      if (this.item.startTime) {
+        this.item.startTime = dateUtil.dateFormat('yyyy-MM-dd', new Date(this.item.startTime))
+      }
+      if (this.item.endTime) {
+        this.item.endTime = dateUtil.dateFormat('yyyy-MM-dd', new Date(this.item.endTime))
+      }
+
+      console.log('this.item.startTime = ' + this.item.startTime)
+      console.log('this.item.endTime = ' + this.item.endTime)
     },
     _save () {
       if (!this.item.activityName) {

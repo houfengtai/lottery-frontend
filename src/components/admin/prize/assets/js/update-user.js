@@ -22,7 +22,7 @@ export default {
         alert('请输入手机号码')
         return
       }
-      if (!this.item.num) {
+      if (!this.item.time) {
         alert('请输入可抽奖次数')
         return
       }
