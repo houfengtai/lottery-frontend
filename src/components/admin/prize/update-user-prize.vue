@@ -21,7 +21,7 @@
         </div>
         <div class="trophy-row border-top border-bottom">
             <div class="row-label">第几次中</div>
-            <span><input v-model="item.howManyTime" max="2" type="number" placeholder="请输入奖品序号"/></span>
+            <span><input v-model="item.howManyTime" max="2" type="number" placeholder="请输入请输入第几次才中该奖"/></span>
         </div>
 
         <div class="tips">
