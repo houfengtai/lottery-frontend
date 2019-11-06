@@ -26,9 +26,9 @@
 
         <div class="tips">
             <div>温馨提示：</div>
-            <div>1.中奖概率为正整数,数值越大中奖概率越高,0为不中奖</div>
-            <div>2.背景颜色为轮盘奖项背景颜色[1~9a~z]6位数</div>
-            <div>3.奖品序号为该奖项所在的顺序</div>
+            <div>1.必中奖品不受概率影响，慎重选择</div>
+            <div>2.手机号码为指定的中奖号码</div>
+            <div>3.第几次中为第几次才中该奖品</div>
         </div>
         <div><button @click="_save()">保 存</button></div>
 
